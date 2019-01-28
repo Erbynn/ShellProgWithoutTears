@@ -1,0 +1,22 @@
+#!/bin/csh -xv		
+# use of -xv for debugging
+# $0...name of the script
+# $1, $2...first and second parameter
+# ${10}...10th parameter. { } prevents “$1” misunderstanding
+# $*...all positional parameters
+# $#argv..the number of arguments xcluding the script name
+
+
+if ($#argv != 2) then 
+	echo "input error"
+	echo "$0 requires 2 parameters"
+	echo "you input $#argv parameters"
+else
+	set v1 = $1
+	set v2 = $2
+endif
+
+@ sum =  $v1 + $v2
+@ avg = $sum / $#argv
+echo "Sum: $sum"
+echo "Average: $avg"
